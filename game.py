@@ -2,7 +2,7 @@ def setup_game()
     players=2
     while True:
         try: 
-              print(“how many players are in the game?”)
+              print("how many players are in the game?")
               players= int(input())
               If players > 4 or < 2: 
                   print(“must be lower than 5 or higher than 1”)
