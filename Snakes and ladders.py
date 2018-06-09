@@ -6,18 +6,19 @@ def setup_game():
           print("how many players are in the game?")
           players= int(input())
           if players > 4 or players < 2:
-           print("must be lower than 5 or higher than 1")
+            print("must be lower than 5 or higher than 1")
           else:
-         break
- except ValueError:
-    print ("must be a number")
+            break
+
+    except ValueError:
+        print ("must be a number")
 names = {}
 for i in range (1, players +1):
- while True:
-name = input ("What is the name of player{}").format (i)
-if not name in names:
- names(name) = 0
- break
+    while True:
+        name = input ("What is the name of player{}").format (i)
+        if not name in names:
+            names(name) = 0
+            break
 else:
    print("cant have duplicate names")
 'return' (names)
@@ -47,6 +48,7 @@ else:
 font = font.render.SysFont("Comic Sans MS", 40)
 screen_title = (str(title), (RED))
 screen.blit(screen_title, [ 175, 300 ]
-clock.tick(50)
+clock.tick(50)/
 pygame.quit()
+#matthew is dumbo
 
