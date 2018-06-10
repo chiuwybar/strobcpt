@@ -9,7 +9,7 @@ def setup_game():
             print("must be lower than 5 or higher than 1")
           else:
             break
-
+#names and players
     except ValueError:
         print ("must be a number")
 names = {}
@@ -44,7 +44,7 @@ elif new_position in 'ladder_squares':
  print ("player has climbed up ladder and is now on square{}")
 else:
  'return' (new_position)
-
+#animations
 font = font.render.SysFont("Comic Sans MS", 40)
 screen_title = (str(title), (RED))
 screen.blit(screen_title, [ 175, 300 ]
