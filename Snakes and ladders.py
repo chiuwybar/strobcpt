@@ -59,6 +59,7 @@ def setup_game():
                   while True:
                       print("i = " + str (i))
                      # name = input("What is the name of player " + str(i) + "?")
+                     #Message box for interaction
                       name = tkinter.simpledialog.askstring("Name of player" + str(i), "What is your name")
                       #checks to see if name has already be chosen. If it has been chosen, pick a new one.
                       if not name in players:
