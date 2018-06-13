@@ -33,8 +33,9 @@ class Player:
         print("the old position of the player " + self.name + " is " + str(self.current_position))
         self.set_current_position(steps)
         print("the new position of the player " + self.name + " is " + str(self.current_position))
-        if(self.get_current_position()>100):
-            quit
+        if(self.get_current_position()>=100):
+            print("Congrats !!! player " + self.name + " WON !!!")
+
 
     def check_if_move_again(self, pos_dict):
         if(self.get_current_position() in pos_dict.keys()):
@@ -42,7 +43,7 @@ class Player:
             newPos = self.set_current_position(movePos)
             print(" MADE IT !!!!!! new position is " + str(self.get_current_position()) )
 
-pos_dict = {4:10, 9:22, 17:-10}
+pos_dict = {4:10, 9:22, 17:-10, 20:18, 28:56, 40:19, 54:-20, 62:-44, 63:18, 64:-4, 71:20, 87:-63, 93:-20, 95:-20, 99:-21}
 
 """
 -setup game requires
