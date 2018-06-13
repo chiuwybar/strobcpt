@@ -22,8 +22,17 @@ class Player:
     def get_current_position(self):
         return self.current_position
 
+    def get_name(self):
+        return self.name
+
     def set_current_position(self,steps):
         self.current_position = self.current_position + steps
+
+    def move_player(self,steps):
+        print("the old position of the player " + self.name + " is " + str(self.current_position))
+        self.set_current_position(steps)
+        print("the new position of the player " + self.name + " is " + str(self.current_position))
+
 """
 -setup game requires
 -number of players
@@ -35,6 +44,10 @@ class Player:
 #numbweof=tkinter.simpledialog.askstring("number of players", "How many players are there?")
 #print ("there are " + str(numbweof))
 logging.info('Start of program')
+
+#list of all the players in the game that stores the names
+players= []
+#num_players
 def setup_game():
  #players= 2
  while True:
@@ -42,6 +55,7 @@ def setup_game():
 
           #print("how many players are in the game?")
           #num_players= int(input("how many players are in the game?"))
+          global num_players
           num_players= int(tkinter.simpledialog.askinteger("number of players", "How many players are there?"))
           if num_players > 4 or num_players < 2:
               print("must be lower than 5 or higher than 1")
@@ -51,8 +65,7 @@ def setup_game():
               print("number of players created equals " + str(num_players))
               #assign a name to each player
 
-              #list of all the players in the game that stores the names
-              players= []
+
               position_array= []
               #0 is the start of the range. players is the end of a range
               for i in range(0, num_players):
@@ -101,9 +114,18 @@ def roll_dice():
 -next position
 -number that was rolled
 """
+
+
 # execution
 setup_game()
+for i in range (0, num_players ):
+    print ("!!!!!!!!!!!!!!player  " + players[i].get_name())
 
+
+
+
+
+players[0].move_player(10)
 #print("player rolled " + str(roll_dice()))
-
+players[0].move_player(15)
 
