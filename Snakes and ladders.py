@@ -1,5 +1,6 @@
 from tkinter import *
 import tkinter.simpledialog
+import tkinter as tk
 
 #import tkMessageBox
 import random
@@ -32,6 +33,8 @@ class Player:
         print("the old position of the player " + self.name + " is " + str(self.current_position))
         self.set_current_position(steps)
         print("the new position of the player " + self.name + " is " + str(self.current_position))
+        if(self.get_current_position()>100):
+            quit
 
     def check_if_move_again(self, pos_dict):
         if(self.get_current_position() in pos_dict.keys()):
@@ -114,7 +117,9 @@ def setup_game():
 -returns number between 1-6
 """
 def roll_dice():
-    return random.randint(1,6)
+    rolldice = random.randint(1,6)
+    print ("you rolled " + str(rolldice))
+    return rolldice
 
 """
 -move function
@@ -136,16 +141,22 @@ setup_game()
 # time to start ...
 # game finishes when any one player reaches position >= 100
 
-#while True:
+while True:
+    for i in range (0, num_players):
+        next_player = int(tkinter.simpledialog.askinteger("Who rolls next", "Who is the next player?"))
+        rolled = roll_dice()
+        players[i].move_player(rolled)
+        players[i].check_if_move_again(pos_dict)
+
+    #break
 
 
 
-
-players[0].move_player(17)
-players[0].check_if_move_again(pos_dict)
+#players[0].move_player(17)
+#players[0].check_if_move_again(pos_dict)
 #print("player rolled " + str(roll_dice()))
-players[0].move_player(15)
-players[0].check_if_move_again(pos_dict)
+#players[0].move_player(15)
+#players[0].check_if_move_again(pos_dict)
 '''
 -game ends when player reaches 100 or more first
 -track if your at snake(u go down)
