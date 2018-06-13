@@ -115,11 +115,14 @@ def roll_dice():
 -number that was rolled
 """
 
+#while True:
+
+
 
 # execution
 setup_game()
-for i in range (0, num_players ):
-    print ("!!!!!!!!!!!!!!player  " + players[i].get_name())
+#for i in range (0, num_players ):
+    #print ("player  " + players[i].get_name())
 
 
 
@@ -128,4 +131,8 @@ for i in range (0, num_players ):
 players[0].move_player(10)
 #print("player rolled " + str(roll_dice()))
 players[0].move_player(15)
-
+'''
+-game ends when player reaches 100 or more first
+-track if your at snake(u go down)
+-track if your at ladder(u go up)
+'''
