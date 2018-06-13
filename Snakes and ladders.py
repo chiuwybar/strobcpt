@@ -33,6 +33,14 @@ class Player:
         self.set_current_position(steps)
         print("the new position of the player " + self.name + " is " + str(self.current_position))
 
+    def check_if_move_again(self, pos_dict):
+        if(self.get_current_position() in pos_dict.keys()):
+            movePos = pos_dict[self.get_current_position()]
+            newPos = self.set_current_position(movePos)
+            print(" MADE IT !!!!!! new position is " + str(self.get_current_position()) )
+
+pos_dict = {4:10, 9:22, 17:-10}
+
 """
 -setup game requires
 -number of players
@@ -123,14 +131,21 @@ def roll_dice():
 setup_game()
 #for i in range (0, num_players ):
     #print ("player  " + players[i].get_name())
+# game now has players identified
+# everyone is at position 0
+# time to start ...
+# game finishes when any one player reaches position >= 100
+
+#while True:
 
 
 
 
-
-players[0].move_player(10)
+players[0].move_player(17)
+players[0].check_if_move_again(pos_dict)
 #print("player rolled " + str(roll_dice()))
 players[0].move_player(15)
+players[0].check_if_move_again(pos_dict)
 '''
 -game ends when player reaches 100 or more first
 -track if your at snake(u go down)
